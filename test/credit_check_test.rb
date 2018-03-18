@@ -3,8 +3,11 @@ require 'minitest/pride'
 require './lib/credit_check.rb'
 require 'pry'
 
-class CreditCheckerTest < Minitest::Test
 cardnum = 4929735477250543
+
+class CreditCheckerTest < Minitest::Test
+  attr_reader :cardnum
+
   def credit_checker_exists
     credit_check = CreditChecker.new
 
@@ -68,7 +71,7 @@ cardnum = 4929735477250543
   def test_check_for_validity
     credit_check = CreditChecker.new(4929735477250543)
 
-    assert_equal = "Invalid", credit_check.check_for_validity
+    assert_equal = false, credit_check.check_for_validity
   end
 
 end

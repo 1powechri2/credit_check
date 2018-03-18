@@ -1,6 +1,5 @@
 # Checks a credit card number through the Luhn algorithm
 cardnum = 4929735477250543
-valid = false
 
 class CreditChecker
   attr_reader :cardnum
@@ -51,13 +50,12 @@ class CreditChecker
 
   def check_for_validity
     if add_all_together % 10 == 0
-      puts "Valid"
+      true
     else
-      puts "Invalid"
+      false
     end
   end
 
 end
 
 credit_check = CreditChecker.new(cardnum)
-puts credit_check.check_for_validity
