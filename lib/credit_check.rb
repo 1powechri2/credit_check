@@ -21,7 +21,7 @@ class CreditChecker
   end
 
   def times_2
-    seperate_odd_index.map do |nums|
+    seperate_even_index.map do |nums|
       nums * 2
     end
   end
@@ -37,11 +37,11 @@ class CreditChecker
   end
 
   def sum_array_odd_index
-    convert_digits_over_10.sum
+    seperate_odd_index.sum
   end
 
   def sum_array_even_index
-    seperate_even_index.sum
+    convert_digits_over_10.sum
   end
 
   def add_all_together
@@ -59,3 +59,4 @@ class CreditChecker
 end
 
 credit_check = CreditChecker.new(cardnum)
+puts credit_check.check_for_validity

@@ -38,13 +38,13 @@ class CreditCheckerTest < Minitest::Test
   def check_times_2
     credit_check = CreditChecker.new(4929735477250543)
 
-    assert_equal = [18,18,6,8,14,1,1,6], credit_check.times_2
+    assert_equal = [8,4,14,10,14,4,0,8], credit_check.times_2
   end
 
   def convert_digits_over_10
     credit_check = CreditChecker.new(4929735477250543)
 
-    assert_equal = [9,9,6,8,5,1,1,6], credit_check.convert_digits_over_10
+    assert_equal = [8,4,5,1,5,4,0,8], credit_check.convert_digits_over_10
   end
 
   def test_sum_array_odd_index
@@ -56,19 +56,19 @@ class CreditCheckerTest < Minitest::Test
   def test_sum_array_even_index
     credit_check = CreditChecker.new(4929735477250543)
 
-    assert_equal = 31, credit_check.sum_array_even_index
+    assert_equal = 35, credit_check.sum_array_even_index
   end
 
   def test_add_all_together
     credit_check = CreditChecker.new(4929735477250543)
 
-    assert_equal = 76, credit_check.add_all_together
+    assert_equal = 80, credit_check.add_all_together
   end
 
   def test_check_for_validity
     credit_check = CreditChecker.new(4929735477250543)
 
-    assert_equal = false, credit_check.check_for_validity
+    assert_equal = true, credit_check.check_for_validity
   end
 
 end
